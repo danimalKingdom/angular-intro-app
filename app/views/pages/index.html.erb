@@ -10,10 +10,10 @@
 
     <div id="task">
       <h3>Cat tasks:</h3>
-      <li ng-repeat="task in tasks">
-      {{ task }}
+      <div ng-repeat="task in tasks track by $index">
+      <span ng-click="completeTask($index)">{{ task }}</span>
       <input ng-model="task">
-      </li>
+      </div>
     </div>
 
     <h3>Add a new task:</h3>
