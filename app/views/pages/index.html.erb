@@ -10,15 +10,19 @@
 
     <div id="task">
       <h3>Cat tasks:</h3>
-      <div ng-repeat="task in tasks track by $index">
-      <span ng-click="completeTask($index)">{{ task }}</span>
-      <input ng-model="task">
+      <div ng-repeat="task in tasks track by $index" ng-if="isAboutCat(task.text)">
+      <span ng-click="completeTask($index)">{{ task.text }}</span> <strong>{{ task.importance }}</strong>
+      <input ng-model="task.text">
       </div>
     </div>
 
     <h3>Add a new task:</h3>
-    <input ng-model="newTask">
-    <button ng-click="addTask(newTask)">Add Task</button>
+    <p>{{ errorMessage }}</p>
+
+    Task Text: <input ng-model="newTaskText"><br>
+    Task Importance: <input ng-model="newTaskImportance"><br>
+    Task Duration: <input ng-model="newTaskDuration"><br>
+    <button ng-click="addTask(newTaskText, newTaskImportance, newTaskDuration)">Add Task</button>
 
   </div>
 </div>
