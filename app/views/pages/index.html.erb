@@ -3,12 +3,15 @@
 
 <div ng-app="app">
   <div ng-controller="stuffCtrl">
-    <p>{{ firstTask }}</p>
-    <p>{{ secondTask }}</p>
-    <p>{{ thirdTask }}</p>
+
     <p>{{ messsage }}</p>
 
     <input ng-model="message">
-    <input ng-model="thirdTask">
+
+    <div id="task">
+      <h3>Cat tasks:</h3>
+      <li ng-repeat="task in tasks">{{ task }}</li>
+    </div>
+
   </div>
 </div>
