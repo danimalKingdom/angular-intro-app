@@ -10,8 +10,15 @@
 
     <div id="task">
       <h3>Cat tasks:</h3>
-      <li ng-repeat="task in tasks">{{ task }}</li>
+      <li ng-repeat="task in tasks">
+      {{ task }}
+      <input ng-model="task">
+      </li>
     </div>
+
+    <h3>Add a new task:</h3>
+    <input ng-model="newTask">
+    <button ng-click="addTask(newTask)">Add Task</button>
 
   </div>
 </div>
